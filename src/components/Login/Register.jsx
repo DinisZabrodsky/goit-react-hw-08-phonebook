@@ -26,7 +26,7 @@ export const Register = () => {
 
             <div className={cssLogin.link}>
                 <NavLink className={cssLogin.linkElement} to='/'>Home</NavLink>
-                <NavLink className={cssLogin.linkElement} to='/register'>Register</NavLink>
+                <NavLink className={cssLogin.linkElement} to='/login'>Login</NavLink>
             </div>
         </div>
 </>}

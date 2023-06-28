@@ -6,6 +6,8 @@
     margin-right: auto;
 
     width: 500px;
+    
+    box-sizing: border-box;
 
     background-color: rgb(224, 224, 224);
     border: solid 2px #965252;
