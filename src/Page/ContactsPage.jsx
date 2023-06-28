@@ -14,7 +14,7 @@ const getSelector = (state) => state.phonebok
 const getFilter = (state) => state.filter
 
 
-export const Contacts =  () => {
+export const ContactsPage =  () => {
     const dispatch = useDispatch()
     const {contacts:{items, isLoading, error}} = useSelector(getSelector)
     const {value: filter} = useSelector(getFilter)
