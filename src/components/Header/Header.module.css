@@ -1,0 +1,45 @@
+.headerConteiner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 500px;
+    height: 40px;
+
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    background-color: rgb(224, 224, 224);
+    border: solid 2px #965252;
+    border-radius: 5px;
+}
+
+.logo {
+    font-size: 22px;
+
+    color:rgb(6, 132, 132)
+}
+
+.headerNav {
+    display: flex;
+    justify-content: space-between;
+
+    width: 150px;
+    height: 100%;
+}
+
+.headerNav a {
+
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: rgb(3, 100, 186);
+    text-decoration: none;
+}
