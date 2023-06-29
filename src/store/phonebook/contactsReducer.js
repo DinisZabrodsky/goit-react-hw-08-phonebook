@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {initialState} from './initialState'
-import { addContactThunk, deleteContactThunk, getPhonebookThunk } from "./thunkPhonebook";
+import { addContactThunk, deleteContactThunk, getPhonebookThunk} from "./thunkPhonebook";
 
 const phonebookSlice = createSlice({
     name: 'phonebook',

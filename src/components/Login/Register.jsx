@@ -1,27 +1,55 @@
 import { NavLink } from "react-router-dom"
 
 import cssLogin from '../Login/Login.module.css'
+import { useDispatch, useSelector } from "react-redux"
+import { registerUserThunk } from "store/login/thunkLogin"
+import { Loading } from "components/Loading/Loading"
+
+const state = (state) => { return state.login.login}
 
 export const Register = () => {
+    const dispatch = useDispatch()
+    const {error, loading}  = useSelector(state)
+    
+
+    if(error) {
+        alert('Під час запиту винекла помилка. Перевірте дані вводу')
+    }
+
+    const handleSubmitRegister = (e) => {
+        e.preventDefault()
+
+        const newUser = {
+            name: e.currentTarget.elements.name.value,
+            email: e.currentTarget.elements.email.value,
+            password: e.currentTarget.elements.password.value
+        }
+
+        console.log(newUser)
+        dispatch(registerUserThunk(newUser))
+    }
+
     return <>
+        {loading && <Loading />}
+
         <div className={cssLogin.loginConteiner}>
             <h1 className={cssLogin.loginTitel}>Register</h1>
 
-            <form >
-                <label>
+            <form onSubmit={handleSubmitRegister}>
+                <label >
                     Name
-                    <input type="text" placeholder="Bob" required/>
+                    <input name="name" type="text" placeholder="Bob" required/>
                 </label>
                 <label >
                     Email
-                    <input type="text" placeholder="Emai@mail.com" required/>
+                    <input name="email" type="text" placeholder="Emai@mail.com" required/>
                 </label>
                 <label >
                     Password
-                    <input type="password" minlength="4" placeholder="1234" required/>
+                    <input name='password' type="password" minLength="6" placeholder="qwer1234" required/>
                 </label>
 
-                <button className={cssLogin.loginButton}>Sing Up</button>
+                <button className={cssLogin.loginButton} type='submit'>Sing Up</button>
             </form>
 
             <div className={cssLogin.link}>
