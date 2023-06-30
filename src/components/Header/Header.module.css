@@ -26,13 +26,16 @@
 
 .headerNav {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    flex-direction: row-reverse;
 
-    width: 150px;
+    gap: 15px;
+
+    width: 300px;
     height: 100%;
 }
 
-.headerNav a {
+.headerNavLink {
 
     display: inline-flex;
     align-items: center;
@@ -41,5 +44,17 @@
     font-weight: 500;
 
     color: rgb(3, 100, 186);
+    text-decoration: none;
+}
+
+.headerNavName {
+
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: rgb(17, 23, 28);
     text-decoration: none;
 }
