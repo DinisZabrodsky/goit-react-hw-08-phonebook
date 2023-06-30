@@ -28,7 +28,6 @@ export const Register = () => {
             password: e.currentTarget.elements.password.value
         }
 
-        console.log(newUser)
         dispatch(registerUserThunk(newUser))
     }
 
