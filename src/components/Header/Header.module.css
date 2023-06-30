@@ -45,6 +45,7 @@
 
     color: rgb(3, 100, 186);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .headerNavName {
@@ -57,4 +58,5 @@
 
     color: rgb(17, 23, 28);
     text-decoration: none;
+    cursor: pointer;
 }

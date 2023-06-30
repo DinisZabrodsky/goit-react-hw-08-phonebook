@@ -40,6 +40,7 @@ function logOutFulfilled ({login}) {
 
 function loginPending ({login}) {
     login.loading = true
+    login.error = false
 }
 
 function loginRejected ({login}) {

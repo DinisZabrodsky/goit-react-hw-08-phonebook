@@ -11,17 +11,17 @@ const persistLogin = {
 	storage,
 }
 
-// const persistPhonebook = {
-//     key: 'phonebook',
-//     storage
-// }
+const persistPhonebook = {
+    key: 'phonebook',
+    storage
+}
 
-// const persistPhonebookReduser = persistReducer(persistPhonebook, contactsReducer)
+const persistPhonebookReduser = persistReducer(persistPhonebook, contactsReducer)
 
 const persistLoginReduser = persistReducer(persistLogin, loginReduser)
 
 export const reducer = {
     login: persistLoginReduser,
-    phonebok: contactsReducer,
+    phonebok: persistPhonebookReduser,
     filter: filterReducer
 }
