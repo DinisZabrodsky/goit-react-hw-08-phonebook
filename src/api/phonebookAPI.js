@@ -3,7 +3,7 @@ import axios from 'axios';
 // axios.defaults.baseURL= 'https://649332ad428c3d2035d17c89.mockapi.io'
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
-const setToken = (token) => {
+export const setToken = (token) => {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
 

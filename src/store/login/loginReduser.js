@@ -22,7 +22,6 @@ const loginSlice = createSlice({
 
 export const loginReduser = loginSlice.reducer
 
-
 function loginFulfilled ({login}, {payload}) {
     login.token = payload.token
     login.name = payload.user.name

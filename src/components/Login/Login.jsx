@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import cssLogin from "./Login.module.css"
 import { loginUserThunk } from "store/login/thunkLogin"
 import { Loading } from "components/Loading/Loading"
+import { useEffect } from "react"
 
 const state = (state) => { return state.login.login}
 
@@ -11,17 +12,24 @@ export const Login = () => {
     const {error, loading}  = useSelector(state)
     const dispatch = useDispatch()
 
-    if(error) {
-        alert('Під час запиту винекла помилка. Перевірте дані вводу')
-    }
+    useEffect(() => {
+        if(error) {
+            alert('Під час запиту винекла помилка. Перевірте дані вводу')
+        }
+    },[error])
+    
+    
 
     const handleLogin = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         const user = {
             email: e.currentTarget.elements.email.value,
             password: e.currentTarget.elements.password.value
         }
+
+        e.currentTarget.elements.email.value = ''
+        e.currentTarget.elements.password.value = ''
 
         dispatch(loginUserThunk(user))
     }

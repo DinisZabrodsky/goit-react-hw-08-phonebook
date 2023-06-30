@@ -4,6 +4,7 @@ import cssLogin from '../Login/Login.module.css'
 import { useDispatch, useSelector } from "react-redux"
 import { registerUserThunk } from "store/login/thunkLogin"
 import { Loading } from "components/Loading/Loading"
+import { useEffect } from "react"
 
 const state = (state) => { return state.login.login}
 
@@ -12,9 +13,11 @@ export const Register = () => {
     const {error, loading}  = useSelector(state)
     
 
-    if(error) {
-        alert('Під час запиту винекла помилка. Перевірте дані вводу')
-    }
+    useEffect(() => {
+        if(error) {
+            alert('Під час запиту винекла помилка. Перевірте дані вводу')
+        }
+    },[error])
 
     const handleSubmitRegister = (e) => {
         e.preventDefault()
