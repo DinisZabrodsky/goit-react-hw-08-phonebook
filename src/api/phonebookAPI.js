@@ -16,7 +16,6 @@ export const registerUser = async (newUser) => {
         if (data.token) {
             setToken(data.token)
         }
-        console.log(data)
         return data 
 }
 
@@ -26,14 +25,12 @@ export const loginUser = async (user) => {
     if (data.token) {
         setToken(data.token)
     }
-    console.log(data)
     return data
 }
 
 export const logOutUser = async (user) => {
     const {data} = await axios.post("/users/logout")
     delToken()
-    console.log(data)
     return data
 }
 
